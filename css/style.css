@@ -1,0 +1,172 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 250px;
+  margin: 100px auto;
+  padding: 20px;
+  text-decoration: none;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  background-color: rgba(0, 255, 0, 0.1);
+  color: black;
+  border-radius: 5px;
+  transition: all .25s;
+}
+.button span {
+  margin-top: 20px;
+  text-transform: uppercase;
+  color: #0e0e0e;
+  font-weight: lighter;
+  font-family: Helvetica;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+.button svg {
+  height: 64px;
+  width: 64px;
+  overflow: visible;
+  transition: all .5s;
+}
+.button .eyes * {
+  -webkit-animation: grow 2s ease infinite;
+          animation: grow 2s ease infinite;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.button:hover {
+  background-color: rgba(0, 255, 0, 0.15);
+  border: 1px solid rgba(0, 255, 0, 0.5);
+}
+.button:hover .eyes * {
+  -webkit-animation: growShake .5s ease 2;
+          animation: growShake .5s ease 2;
+}
+.button:hover .eyes #eye-left {
+  -webkit-animation-delay: .1s;
+          animation-delay: .1s;
+}
+.button:hover .tongue {
+  -webkit-animation: growTongue 1.5s ease 1;
+          animation: growTongue 1.5s ease 1;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+}
+
+@-webkit-keyframes grow {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes growShake {
+  0% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+  25% {
+    -webkit-transform: scale(1.1) rotate(25deg);
+            transform: scale(1.1) rotate(25deg);
+  }
+  50% {
+    -webkit-transform: scale(1) rotate(-15deg);
+            transform: scale(1) rotate(-15deg);
+  }
+  75% {
+    -webkit-transform: scale(1.2) rotate(10deg);
+            transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+}
+@keyframes growShake {
+  0% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+  25% {
+    -webkit-transform: scale(1.1) rotate(25deg);
+            transform: scale(1.1) rotate(25deg);
+  }
+  50% {
+    -webkit-transform: scale(1) rotate(-15deg);
+            transform: scale(1) rotate(-15deg);
+  }
+  75% {
+    -webkit-transform: scale(1.2) rotate(10deg);
+            transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+}
+@-webkit-keyframes growTongue {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  50% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+@keyframes growTongue {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  50% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
