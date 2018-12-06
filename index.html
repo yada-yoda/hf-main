@@ -3,42 +3,362 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Animated Money Emoji with CSS</title>
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <title>heyfrank | Terminal - Are you lost?</title>
 
-  
-      <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
-  
+
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(https://fonts.googleapis.com/css?family=VT323);
+
+@keyframes scroll {
+	0% { height: 0 }
+	100% { height: 100%; }
+}
+
+@keyframes type {
+  from { width: 0; }
+}
+
+@keyframes type2 {
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; }
+}
+
+@keyframes blink {
+  to{opacity: .0;}
+}
+
+@keyframes scan {
+	from { top: 0 }
+	to { top: 100% }
+}
+
+@keyframes flicker {
+		0% { opacity: 0.15795 }
+		5% { opacity: 0.31511 }
+		10% { opacity: 0.94554 }
+		15% { opacity: 0.2469 }
+		20% { opacity: 0.62031 }
+		25% { opacity: 0.0293 }
+		30% { opacity: 0.00899 }
+		35% { opacity: 0.5344 }
+		40% { opacity: 0.12778 }
+		45% { opacity: 0.52042 }
+		50% { opacity: 0.3823 }
+		55% { opacity: 0.2198 }
+		60% { opacity: 0.9383 }
+		65% { opacity: 0.86615 }
+		70% { opacity: 0.68695 }
+		75% { opacity: 0.55749 }
+		80% { opacity: 0.96984 }
+		85% { opacity: 0.0361 }
+		90% { opacity: 0.24467 }
+		95% { opacity: 0.08351 }
+		100% { opacity: 0.54813 }
+	}
+
+* {
+	box-sizing: border-box;
+	}
+
+html,
+body {
+	background: #383838;
+	color: #00dd00;
+	font-size: 64.5%;
+	font-size: 1.4em;
+	font-family: 'VT323', Courier;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3 h4, h5, h6 {
+	font-weight: normal;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+}
+
+p {
+	line-height: 100%;
+	margin: 0;
+}
+
+span { animation: blink 1s infinite }
+
+ul {
+	list-style: none;
+}
+
+ul a:before,
+p a:before {
+	color: #00dd00;
+	content: ' [ ';
+}
+
+ul a:after,
+p a:after {
+	color: #00dd00;
+	content: ' ] ';
+}
+
+header.site {
+	margin: 0 0 40px 0;
+	text-transform: uppercase;
+}
+
+nav.site {
+	margin: 0 0 40px 0;
+  width: 100%;
+}
+
+nav.site ul {
+	padding: 0;
+}
+
+nav.site ul li {
+	display: inline-block;
+  padding: 0 10px;
+  min-width: 250px;
+  width: auto;
+}
+
+.overlay {
+	height: 1px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+}
+
+.overlay:before {
+	background: linear-gradient(#101010 50%, rgba(16, 16, 16, 0.2) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.03));
+	background-size: 100% 3px, 6px 100%;
+	content: "";
+	display: block;
+	pointer-events: none;
+	position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	z-index: 2;
+}
+
+.overlay:after {
+	animation: flicker 0.30s infinite;
+	background: rgba(16, 16, 16, 0.2);
+	content: "";
+	display: block;
+	pointer-events: none;
+	position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	z-index: 2;
+}
+
+.col {
+	float: left;
+	padding: 0 20px;
+}
+
+.col.two { width: auto; }
+
+.wrapper {
+  animation: scroll 5s 1;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.content {
+	animation: scroll 3s 1;
+  overflow: hidden;
+	padding: 40px;
+	position: relative;
+	width: 95%;
+}
+
+#logo-v {
+	display: block;
+	height: auto;
+	margin: 0 auto;
+	width: 200px;
+}
+
+img.pip-hero {
+	display: block;
+	float: left;
+	height: auto;
+	margin: 5px 10px 5px 0;
+	width: 120px;
+}
+
+form {}
+
+label {
+	clear: left;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	padding-top: 5px;
+}
+
+input[type=text],
+textarea {
+	background: transparent;
+	border: none;
+	color: #00dd00;
+	display: block;
+	float: left;
+	font-family: 'VT323', Courier;
+	font-size: 1.2em;
+	position: relative;
+	width: 80%;
+	z-index: 10
+}
+
+textarea {
+	margin-bottom: 20px
+	overflow: auto;
+	resize: none;
+}
+
+input[type=text]:focus,
+textarea:focus,
+input[type=submit]:focus,
+a.button:focus {
+	outline: 0;
+}
+
+input[type=submit],
+a.button {
+	background: transparent;
+	border: 1px solid #00dd00;
+	clear: both;
+	color: #00dd00;
+	cursor: hand;
+	display: inline-block;
+	font-family: 'VT323', Courier;
+	font-size: 1em;
+	margin-bottom: 20px;
+	opacity: 0.25;
+	padding: 10px 100px;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	z-index: 10;
+}
+
+input[type=submit]:hover,
+a.button:hover {
+	background: #00dd00;
+	color: #383838;
+	opacity: 0.8;
+}
+
+.expandingArea { position: relative }
+
+.scanline {
+	animation: scroll 10s 5s infinite;
+	background: -moz-linear-gradient(top,  rgba(0,221,0,0) 0%, rgba(0,221,0,1) 50%, rgba(0,221,0,0) 100%);
+	background: -webkit-linear-gradient(top,  rgba(0,221,0,0) 0%,rgba(0,221,0,1) 50%,rgba(0,221,0,0) 100%);
+	background: linear-gradient(to bottom,  rgba(0,221,0,0) 0%,rgba(0,221,0,1) 50%,rgba(0,221,0,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000dd00', endColorstr='#0000dd00',GradientType=0 );
+	display: block;
+	height: 20px;
+	opacity: 0.05;
+	position: absolute;
+		left: 0;
+		right: 0;
+		top: -5%;
+	z-index: 2;
+}
+
+.clear {
+	clear: both;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+.upper { text-transform: uppercase; }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 </head>
 
 <body>
 
-  <a class="button">
-  <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 64 64">
-    <circle fill="#ffdd67" cx="32" cy="32" r="30"/>
-    <g fill="#664e27">
-      <path d="m48 37.5c0 6.461-5.314 14-16 14-10.688 0-16-7.539-16-14 0 0 5.311 0 16 0 10.686 0 16 0 16 0"/>
-      <path d="m32 52.5c-11.04 0-17-7.729-17-15v-1h34v1c0 7.271-5.957 15-17 15m-14.955-14c.523 5.99 5.727 12 14.955 12 9.229 0 14.434-6.01 14.957-12h-29.912"/>
-    </g>
-    <g class="tongue">
-      <path fill="#74e063" d="m32 40h-10c0 0 0 2.787 0 5.92 0 10.703 4.478 16.08 9.998 16.08 5.523 0 10-5.377 10-16.08 0-3.131 0-5.918 0-5.918h-10"/>
-      <path opacity=".33" d="m39.642 40v5.66c-.001 8.348-3 13.74-7.643 13.74-4.642-.003-7.64-5.396-7.64-13.738v-5.662h-.805v5.662c0 8.878 3.314 14.617 8.443 14.621h.001c5.13 0 8.446-5.74 8.448-14.623v-5.66h-.804"/>
-      <path opacity=".33" d="m22 40h20v3.385h-20z"/>
-      <g opacity=".33">
-        <path d="m28.342 45.33c.971-.293 1.721-.121 2.256.518-.646 1.166-1.043 2.01-1.191 2.535.008.979.237 1.517.691 1.611.362.022.713-.275 1.051-.896l.8-1.748c.548-1.092 1.317-1.658 2.312-1.699.574.041 1.088.251 1.545.629.457.379.757.804.9 1.277.145.475.217.768.221.881l1.281.13c.295.629.26 1.226-.104 1.787l-1.338-.13c-.006.545-.292 1.268-.864 2.168-.808.037-1.51-.23-2.108-.801.777-1.102 1.141-1.982 1.088-2.645.069-.621-.139-.949-.627-.986-.276-.021-.636.416-1.076 1.313-.392 1.028-.844 1.791-1.352 2.287s-1.123.719-1.852.662c-.981-.072-1.734-.557-2.26-1.453-.375-.57-.586-1.01-.635-1.306l-1.293-.033c-.316-.911-.238-1.583.236-2.01l1.318.109c.061-.517.395-1.25 1-2.197"/>
-      </g>
-    </g>
-    <g class="eyes" fill="#664e27">
-      <path id="eye-left" d="m22.5 22.774l-2.34-.814c-.838-.355-1.26-.759-1.271-1.211.074-.572.743-.913 2.01-1.022.691.129 1.824.535 3.398 1.216.767-.728.908-1.677.426-2.851-1.286-.653-2.268-.992-2.941-1.014v-1.647c-.605-.544-1.479-.573-2.622-.087l.095 1.607c-.381.092-.92.397-1.616.921-1.102.743-1.646 1.729-1.635 2.953.005.909.358 1.649 1.052 2.229.695.579 1.728 1.062 3.096 1.443 1.204.453 1.809.854 1.809 1.2.005.607-.396.9-1.205.879-.848.133-2.023-.228-3.528-1.078-.673.801-.942 1.699-.809 2.697 1.223.617 2.187.897 2.89.85l-.023 1.673c.763.394 1.535.375 2.315-.055l.03-1.603c.146-.019.518-.138 1.113-.364.597-.228 1.113-.643 1.555-1.248.438-.607.652-1.266.646-1.98-.162-1.23-.974-2.128-2.442-2.694"/>
-      <path id="eye-right" d="m45.5 22.774l-2.34-.814c-.838-.355-1.26-.759-1.27-1.211.073-.572.742-.913 2.01-1.022.691.129 1.824.535 3.398 1.216.766-.728.908-1.677.426-2.851-1.287-.653-2.268-.992-2.941-1.014v-1.647c-.605-.544-1.479-.573-2.622-.087l.095 1.607c-.381.092-.92.397-1.616.921-1.103.743-1.646 1.729-1.636 2.953.006.909.358 1.649 1.053 2.229.695.579 1.728 1.062 3.096 1.443 1.204.453 1.808.854 1.809 1.2.005.607-.396.9-1.205.879-.848.133-2.023-.228-3.528-1.078-.673.801-.942 1.699-.81 2.697 1.224.617 2.188.897 2.891.85l-.023 1.673c.763.394 1.535.375 2.315-.055l.03-1.603c.146-.019.518-.138 1.113-.364.596-.228 1.113-.643 1.554-1.248.438-.607.653-1.266.646-1.98-.162-1.23-.973-2.128-2.441-2.694"/>
-    </g>
-  </svg>
-  <span>Hover Me</span>
-</a>
-  
-  
+  	<div class="overlay"></div>
+	<div class="scanline"></div>
+<div class="wrapper">
+<div class="content clearfix">
+
+		<header class="site clearfix">
+		<div class="col one">
+			<img src="images\logo.png" alt="heyfrank" width="740" height="729" id="logo-v" />
+		</div>
+			<div class="col two">
+				<h4>Cho-Cho Industries (tm) <br /> <b>H</b>euristically <b>E</b>ncrypted <b>R</b>eal-Time <b>O</b>perating <b>S</b>ystem (HEROS)</h4>
+				<p>----------------------------------------</p>
+				<p>HEROS v 1.0.0</p>
+				<p>(c)2018 Cho-Cho Industries </p>
+				<p>- Server 420 -</p>
+			</div>
+		</header>
+
+		<nav class="site clear">
+			<ul>
+				<li><a href="https://heyfrank.github.io/404" target="_blank" title="">Return Home</a></li>
+				<li><a href="https://heyfrank.github.io/freemoney" target="_blank" title="">Free Money</a></li>
+				<li><a href="https://heyfrank.github.io/game" target="_blank" title="">Play a Game</a></li>
+			</ul>
+		</nav>
+
+		<p>System Administrator Integrated Message System (SAIMS)</p>
+		<p>System Administrator (SYSADM) - Randy Marsh</p>
+
+		<p class="clear"><br /></p>
+
+		<p>Welcome to the System Administrator Integrated Message System (SAIMS). Fill out the fields below and press the SUBMIT button. The system administrator (SYSADM) will respond to your query after an appropriate amount of quiet contemplation. Thank you for contacting the System Administrator's Office.</p><br />
+
+		<form>
+			<label>Name >></label><input type="text" /><br />
+			<label>Email >></label><input type="text" /><br />
+			<label>Subject >></label><input type="text" /><br />
+			<label>Message >></label><textarea id="text" rows="1"></textarea><br /><br /><br />
+			<input type="submit" value="Submit" />
+			<a class="button" alt="" href="index.html">Cancel</a>
+		</form>
+	</div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://static.tumblr.com/maopbtg/oimmiw86r/jquery.autosize-min.js'></script>
+
+
+
+    <script  src="js/index.js"></script>
+
+
+
 
 </body>
 
