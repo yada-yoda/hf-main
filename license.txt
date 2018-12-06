@@ -1,11 +1,7 @@
 
 
 <!--
-Copyright (c) 2018 by heyfrank (https://codepen.io/heyfrank/pen/qQzoVo)
-
-
-Fork of an original work by Gil (https://codepen.io/gil--/pen/oxJgqq)
-
+Copyright (c) 2018 by Mack Richardson (https://codepen.io/mackorichardson/pen/vNMRpK)
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
